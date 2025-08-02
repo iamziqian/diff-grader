@@ -16,11 +16,6 @@ DiffGrader is an intelligent grading system for code comparison and feedback - d
 - **👁️ Comparison Visualization**: Click on any code element to instantly view side-by-side differences with intelligent highlighting
 - **📝 Assessment Feedback**: TAs can review differences and provide comprehensive feedback on code quality and design patterns
 
-## 🔒 Security & Safety Features
-
-### Security-Focused Code Analysis
-DiffGrader provides comprehensive security analysis and risk assessment capabilities:
-
 - **🔍 Vulnerability Detection**: Automated scanning for common security vulnerabilities including:
   - SQL injection patterns and unsafe database operations
   - Cross-site scripting (XSS) vulnerabilities
