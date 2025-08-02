@@ -16,6 +16,47 @@ DiffGrader is an intelligent grading system for code comparison and feedback - d
 - **👁️ Comparison Visualization**: Click on any code element to instantly view side-by-side differences with intelligent highlighting
 - **📝 Assessment Feedback**: TAs can review differences and provide comprehensive feedback on code quality and design patterns
 
+## 🔒 Security & Safety Features
+
+### Security-Focused Code Analysis
+DiffGrader provides comprehensive security analysis and risk assessment capabilities:
+
+- **🔍 Vulnerability Detection**: Automated scanning for common security vulnerabilities including:
+  - SQL injection patterns and unsafe database operations
+  - Cross-site scripting (XSS) vulnerabilities
+  - Input validation and sanitization issues
+  - Unsafe file operations and path traversal
+  - Hardcoded credentials and sensitive data exposure
+  - Insecure authentication and authorization patterns
+
+- **🛡️ Security Best Practices Assessment**: 
+  - Authentication and authorization implementation patterns
+  - Data encryption and secure communication protocols
+  - Input sanitization and validation practices
+  - Error handling and secure logging practices
+  - Secure coding standards compliance
+
+- **⚡ Automated Remediation Recommendations**:
+  - Real-time suggestions for fixing security vulnerabilities
+  - Code examples for implementing secure patterns
+  - Best practice guidelines for each detected security issue
+  - Integration with OWASP Top 10 security standards
+  - Custom security rule configuration
+
+### Data Protection & Privacy
+- **🔐 Secure File Processing**: All uploaded files are processed in isolated environments with strict access controls
+- **🔒 Encrypted Storage**: Sensitive data encrypted at rest and in transit using industry-standard protocols
+- **🛡️ Access Control**: Role-based authentication and authorization with granular permissions
+- **📋 Comprehensive Audit Logging**: Detailed logging of all system activities for security monitoring and compliance
+
+### Platform Security Architecture
+- **🛡️ JWT Authentication**: Secure token-based authentication with configurable expiration
+- **🔒 HTTPS Enforcement**: All communications encrypted using TLS/SSL with certificate validation
+- **🛡️ Input Validation**: Multi-layer input sanitization and validation to prevent injection attacks
+- **🔍 Rate Limiting**: Advanced rate limiting to protect against brute force and DDoS attacks
+- **🛡️ CORS Configuration**: Proper cross-origin resource sharing controls for API security
+- **🔒 Secure Headers**: Implementation of security headers (HSTS, CSP, X-Frame-Options)
+
 ## 🛠️ Technology Stack
 
 ### Backend
