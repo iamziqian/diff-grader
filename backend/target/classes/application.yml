@@ -1,0 +1,86 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: diffgrader-backend
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diffgrader
+    username: diffgrader
+    password: password
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      
+  security:
+    user:
+      name: admin
+      password: admin123
+      
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    com.diffgrader: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Application specific configuration
+diffgrader:
+  file:
+    upload-path: ${FILE_UPLOAD_PATH:./uploads}
+    max-size: 52428800 # 50MB in bytes
+    allowed-types: application/zip,application/x-zip-compressed
+      
+  aws:
+    s3:
+      bucket-name: ${AWS_S3_BUCKET:diffgrader-files}
+      region: ${AWS_REGION:us-east-1}
+      enabled: ${AWS_S3_ENABLED:false}
+      
+  jwt:
+    secret: ${JWT_SECRET:mySecretKey123456789012345678901234567890}
+    expiration: 86400000 # 24 hours in milliseconds
+    
+  analysis:
+    timeout: 300000 # 5 minutes in milliseconds
+    similarity-threshold: 0.7
+    max-concurrent-analyses: 5
+
+# Actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Swagger/OpenAPI Documentation
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
